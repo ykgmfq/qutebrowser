@@ -111,7 +111,7 @@ def type_conv(param, typ, value, *, str_choices=None):
     if isinstance(typ, str):
         raise TypeError("{}: Legacy string type!".format(param.name))
 
-    if value is param.default:
+    if value == param.default:
         return value
 
     assert isinstance(value, str), repr(value)
